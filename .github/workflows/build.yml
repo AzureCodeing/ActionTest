@@ -13,5 +13,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: docker://rainbowaurora/ubuntu:18.04
       with:
-        args: mkdir build && cd build && cmake .. && make 
+        args: 
+          - 'ls'
+          - 'pwd'
 
