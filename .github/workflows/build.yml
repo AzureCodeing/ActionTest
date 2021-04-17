@@ -10,15 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: run docker container
-      uses: docker://rainbowaurora/ubuntu:18.04
+    - uses: docker://rainbowaurora/ubuntu:18.04
       with:
-        args: 
-        - 'ls /usr/local/lib'
-        - 'git clone https://github.com/RainBowAurora/CodeRecord.git'
-        - 'cd CodeRecord'
-        - 'mkdir build && cd build && cmake ..'
-        - 'make'
-        - 'find -name "*test" -type f | bash'
-   
+       uses: actions/checkout@v1
+        - name: configure
+          run: mkdir build && cd build && cmake ..
+        - name: make project
+          run: cd build && make
+        - name: run test
+          run: sudo find -name "*_test"  -type f | bash
+
+
