@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "run build..."
-cmake 
+mkdir build && cd build && cmake ..
 echo "run make..."
 make
 echo "run test..."
