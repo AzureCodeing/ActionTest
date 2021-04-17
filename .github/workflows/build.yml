@@ -13,9 +13,4 @@ jobs:
     - uses: actions/checkout@v1
     - uses: docker://rainbowaurora/ubuntu:18.04
       with: 
-        args: cmake .
-    - uses: docker://rainbowaurora/ubuntu:18.04
-      with: 
-        args: make
-    - name: run test
-      run: sudo find -name "*_test"  -type f | bash
+        args: ./build.sh
