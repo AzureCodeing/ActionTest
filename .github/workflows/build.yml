@@ -17,7 +17,5 @@ jobs:
     - uses: docker://rainbowaurora/ubuntu:18.04
       with: 
         args: make
-    - uses: docker://rainbowaurora/ubuntu:18.04
-      with: 
-        args: {find -name "*_test"  -type f | bash}
-
+    - name: run test
+      run: sudo find -name "*_test"  -type f | bash
