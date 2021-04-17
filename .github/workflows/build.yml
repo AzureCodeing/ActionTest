@@ -14,6 +14,10 @@ jobs:
     - uses: docker://rainbowaurora/ubuntu:18.04
       with:
         args: cmake .
+    - uses: docker://rainbowaurora/ubuntu:18.04
+      with:
         args: make
+    - uses: docker://rainbowaurora/ubuntu:18.04
+      with:
         args: find -name "*_test" | bash
 
