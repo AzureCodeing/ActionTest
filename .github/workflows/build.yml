@@ -13,3 +13,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: run docker container
       uses: docker://rainbowaurora/ubuntu:18.04
+        with:
+          args: ls /usr/local/lib
