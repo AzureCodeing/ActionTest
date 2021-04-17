@@ -15,10 +15,10 @@ jobs:
       uses: docker://rainbowaurora/ubuntu:18.04
       with:
         args: 
-        - ls /usr/local/lib
-        - git clone https://github.com/RainBowAurora/CodeRecord.git
-        - cd CodeRecord
-        - mkdir build && cd build && cmake ..
-        - make
-        - find -name "*test" -type f | bash
+        - 'ls /usr/local/lib'
+        - 'git clone https://github.com/RainBowAurora/CodeRecord.git'
+        - 'cd CodeRecord'
+        - 'mkdir build && cd build && cmake ..'
+        - 'make'
+        - 'find -name "*test" -type f | bash'
    
