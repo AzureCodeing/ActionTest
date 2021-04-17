@@ -14,13 +14,11 @@ jobs:
     - name: run docker container
       uses: docker://rainbowaurora/ubuntu:18.04
       with:
-        args: ls /usr/local/lib
-    - name: watch /usr/local/lib
-      run: ls /usr/local/lib
-    - name: configure
-      run: mkdir build && cd build && cmake ..
-    - name: make project
-      run: cd build && make
-    - name: run test
-      run: sudo find -name "*_test"  -type f | bash
+        args: 
+        - ls /usr/local/lib
+        - git clone https://github.com/RainBowAurora/CodeRecord.git
+        - cd CodeRecord
+        - mkdir build && cd build && cmake ..
+        - make
+        - find -name "*test" -type f | bash
    
