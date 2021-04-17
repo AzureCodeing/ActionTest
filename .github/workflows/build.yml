@@ -12,12 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: docker://rainbowaurora/ubuntu:18.04
-      with:
-        args: cmake .
-    - uses: docker://rainbowaurora/ubuntu:18.04
-      with:
-        args: make
-    - uses: docker://rainbowaurora/ubuntu:18.04
-      with:
-        args: `find -name "*_test"  -type f | bash`
+      with: 
+        args: |
+          cmake .
+          make
+          `find -name "*_test"  -type f | bash`
 
